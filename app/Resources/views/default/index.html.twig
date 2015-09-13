@@ -65,19 +65,16 @@
 {% endblock %}
 
 {% block stylesheets %}
-{% stylesheets
+{% stylesheets filter="scssphp" output="css/compiled/index.css"
     'css/bootstrap.css'
-    'css/style.css'
-    'css/css.css'
-    filter='cssrewrite' output='css/compiled/app.css' %}
+    'css/style.css' %}
     <link rel="stylesheet" href="{{ asset_url }}" />
 {% endstylesheets %}
 {% endblock %}
 
 {% block javascripts %}
-{% javascripts
-    'js/jquery.js'
-    output='js/compiled/app.js' %}
+{% javascripts filter="?jsqueeze"
+    'js/jquery.min.js' %}
     <script src="{{ asset_url }}"></script>
 {% endjavascripts %}
 {% endblock %}
